@@ -5,6 +5,80 @@ public class ch7project3bd
         ch7project3b checker = new ch7project3b();
         Scanner keyboard = new Scanner(System.in);
         int length = 0;
+/**
+ * Write a description of class ch7project3bd here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+
+import java.util.*;
+
+public class ch7project3bd
+{
+    public static void main(String[] args)
+    {
+        ch7project3b checker = new ch7project3b();
+        Scanner in = new Scanner(System.in);
+        
+        String userDateInput= " ";
+        String stringMonth= " ";
+        String stringMonthNew= " ";
+        String stringDay= " ";
+        String stringDayNew= " ";
+        String stringYear= " ";
+        String first= " ";
+        
+        int length = 0;
+        int yearMin = 0;
+        int numberMonth = 0;
+        int numberDay = 0;
+        int numberYear = 0;
+        
+        checker.introDisplay();
+        
+        System.out.print("Please enter a date in mm/dd/yyyy ");
+        
+        userDateInput = in.nextLine();
+        length = userDateInput.length();
+        
+        yearMin = length - 4;
+        
+        stringMonth = userDateInput.substring(0, 2);
+        stringMonth = stringMonth.replace("/","");
+        first = stringMonth.substring(0);
+        
+        
+        if(first.equals("0"))
+        {
+            stringMonth = stringMonth.substring(2);
+        }
+        
+        
+        numberMonth = Integer.parseInt(stringMonth);
+        stringDay = userDateInput.substring(2,5);
+        stringDay = stringDay.replace("/","");
+        first = stringDay.substring(0);
+        
+        
+        if(first.equals("0"))
+        {
+            stringDay = stringDay.substring(1);
+        }
+        
+        
+        numberDay = Integer.parseInt(stringDay);
+        
+        stringYear = userDateInput.substring(yearMin, length);
+        stringYear = stringYear.replace("/","");
+        numberYear = Integer.parseInt(stringYear);
+        
+        checker.printTheMonth(numberMonth);
+        checker.printTheDay(numberMonth, numberDay);
+        checker.yearOutput(numberYear);
+    }
+}
+
         int yearMin = 0;
         int nMonth = 0;
         int nDay = 0;
